@@ -8,7 +8,10 @@ const RestaurantSchema = mongoose.Schema({
         type: String,
         required: true
     },
-
+    index: {
+        type: String,
+        required: false
+    },
     name: {
         type: String,
         required: true
