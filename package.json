@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "heroku-postbuild": "npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Robert Haidl",
