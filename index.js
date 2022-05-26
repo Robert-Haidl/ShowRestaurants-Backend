@@ -8,9 +8,18 @@ const app = express();
 app.use(cors())
 app.use(bodyParser.json());
 
+/** Force ssl */
+app.use((req, res, next) => {
+    if (req.header('x-forwarded-proto') !== 'https')
+      res.redirect(`https://${req.header('host')}${req.url}`)
+    else
+    next()
+  })
+
 const restaurantRoute = require('./routes/restaurantRoute');
 
 app.use('/api/restaurants', restaurantRoute);
+
 
 
 app.get('/', (req, res) => {

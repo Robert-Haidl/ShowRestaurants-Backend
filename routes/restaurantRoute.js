@@ -8,8 +8,9 @@ router.get('/getRestaurants', async (req, res) => {
     const restaurantList = [];
     find.forEach(restaurant => {
         restaurantList.push({
+            index: restaurant.index,
             name: restaurant.name,
-            category: restaurant.name,
+            category: restaurant.category,
             price: restaurant.price,
             taste: restaurant.taste,
             ambiente: restaurant.ambiente,
